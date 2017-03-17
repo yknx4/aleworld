@@ -1,8 +1,8 @@
 {
-  "name": "redux-webpack-es6-boilerplate",
-  "description": "A starter project for modern React apps with Redux",
-  "version": "1.1.1",
-  "author": "Nick S. Plekhanov <nickatgit@yandex.com>",
+  "name": "ale-world",
+  "description": "Personal and Professional Website",
+  "version": "0.0.1",
+  "author": "Ale Figueroa <me@ale.world>",
   "license": "MIT",
   "keywords": [
     "react",
@@ -21,9 +21,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nicksp/redux-webpack-es6-boilerplate.git"
+    "url": "https://github.com/yknx4/aleworld.git"
   },
-  "bugs": "https://github.com/nicksp/redux-webpack-es6-boilerplate/issues",
+  "bugs": "https://github.com/yknx4/aleworld/issues",
   "scripts": {
     "clean:build": "rimraf build",
     "build:html": "node ./bin/buildHtml.js",
