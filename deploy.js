@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-const {rm, cp, exec} = require('shelljs');
+const {existsSync: exists} = require('fs');
+const {rm, cp, mv, exec} = require('shelljs');
 const commandLineArgs = require('command-line-args');
 const optionDefinitions = [
   { name: 'branch', alias: 'b', type: String, defaultValue: 'master' },
@@ -22,8 +23,20 @@ log('Deploying...');
 log('Building production files...');
 exec('yarn build');
 log('Copying production files...');
+
+if (exists('docs/CNAME')) {
+  log('Backup of CNAME configuration...')
+  mv('docs/CNAME', 'CNAME');
+}
+
 rm('-rf', 'docs');
 cp('-R', 'build/client', 'docs');
+
+if (exists('CNAME')) {
+  log('Restore of CNAME configuration...')
+  mv('CNAME', 'docs/CNAME');
+}
+
 log('Creating git commit');
 exec('git reset .');
 exec('git add docs');
