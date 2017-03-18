@@ -44,6 +44,21 @@ module.exports = merge(config, {
           { loader: 'sass', query: { outputStyle: 'expanded' } }
         ]
       },
+      // Less
+      {
+        test: /\.less$/,
+        include: [
+          path.resolve(__dirname, '../src/client/assets/javascripts'),
+          path.resolve(__dirname, '../src/client/assets/styles'),
+          path.resolve(__dirname, '../src/client/scripts')
+        ],
+        loaders: [
+          'style',
+          'css',
+          'postcss',
+          'less',
+        ]
+      },
       // Sass + CSS Modules
       // {
       //   test: /\.scss$/,

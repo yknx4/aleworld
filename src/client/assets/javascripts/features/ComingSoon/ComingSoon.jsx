@@ -9,7 +9,7 @@ export default class ComingSoon extends React.Component {
           <h1>Ale.World❤︎</h1>
           <hr />
           <p>
-            Coming Soon
+            Coming Soon. Visit <a href="https://yknx4.github.io/blog">my blog</a>.
           </p>
         </section>
       </section>

@@ -69,6 +69,23 @@ module.exports = merge(config, {
           ]
         })
       },
+      // Less
+      {
+        test: /\.less$/,
+        include: [
+          path.resolve(__dirname, '../src/client/assets/javascripts'),
+          path.resolve(__dirname, '../src/client/assets/styles'),
+          path.resolve(__dirname, '../src/client/scripts')
+        ],
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style',
+          loader: [
+            { loader: 'css', query: { sourceMap: true } },
+            'postcss',
+            'less'
+          ]
+        })
+      },
       // Sass + CSS Modules
       // {
       //   test: /\.scss$/,

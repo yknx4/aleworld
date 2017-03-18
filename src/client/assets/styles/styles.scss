@@ -1,4 +1,26 @@
+@import 'colors';
+
 body {
   background: #f1f1f1;
   padding-top: 30px;
+}
+
+a:link {
+  color: $primary-color
+}
+
+a:visited {
+  color: $primary-color-light
+}
+
+a:hover {
+  color: $primary-color-dark !important
+}
+
+a:focus {
+  color: $primary-color-dark !important
+}
+
+a:active {
+  color: $primary-color-dark
 }

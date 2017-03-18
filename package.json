@@ -73,6 +73,8 @@
     "jquery": "3.1.0",
     "jscs": "3.0.7",
     "jsdom": "9.4.5",
+    "less": "^2.7.2",
+    "less-loader": "^3.0.0",
     "mocha": "3.0.2",
     "node-sass": "^4.5.0",
     "postcss-loader": "0.11.1",
