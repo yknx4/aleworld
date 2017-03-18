@@ -3,6 +3,7 @@
 import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
+import Helmet from 'react-helmet';
 
 import routes from './routes';
 import { SENTRY_URL } from './config';
@@ -16,10 +17,19 @@ import { SENTRY_URL } from './config';
 
 window.Raven && Raven.config(SENTRY_URL).install();
 
+const HelmetSettings = {
+  link: [
+    { rel: "stylesheets", href: "//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" }
+  ]
+};
+
 const Root = ({ store, history }) => {
   let ComponentEl = (
     <Provider store={store}>
-      <Router history={history} routes={routes} />
+      <div>
+        <Helmet {...HelmetSettings} />
+        <Router history={history} routes={routes} />
+      </div>
     </Provider>
   );
 
@@ -29,6 +39,7 @@ const Root = ({ store, history }) => {
     ComponentEl = (
       <Provider store={store}>
         <div>
+          <Helmet {...HelmetSettings} />
           <Router history={history} routes={routes} />
           {!window.devToolsExtension ? <DevTools /> : null}
         </div>

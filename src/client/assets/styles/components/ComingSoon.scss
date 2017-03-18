@@ -1,0 +1,19 @@
+.comingsoon {
+  font-family: 'Open Sans Condensed', sans-serif;
+  .header {
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    font-style: normal;
+    text-align: center;
+    letter-spacing: 1rem
+  }
+
+}
