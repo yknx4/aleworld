@@ -1,12 +1,18 @@
 .comingsoon {
   font-family: 'Open Sans Condensed', sans-serif;
-  .header {
+  .centered-container {
     padding: 1em;
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
+  }
+  .header {
+    @extend .centered-container;
+    small {
+      display: block;
+    }
   }
   h1 {
     font-size: 4rem;
