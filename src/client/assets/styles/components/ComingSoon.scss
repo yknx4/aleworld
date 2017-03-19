@@ -1,27 +1,20 @@
 @import "../colors";
 .comingsoon {
   font-family: 'Open Sans Condensed', sans-serif;
-  .centered-container {
-    padding: 1em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-  }
+  padding: 1em;
+  text-align: center;
   .header {
-    @extend .centered-container;
     small {
       display: block;
       color: $secondary-text-color
     }
   }
   h1 {
-    font-size: 4rem;
+    font-size: 10vmin;
     font-weight: 300;
     font-style: normal;
     text-align: center;
-    letter-spacing: 1rem
+    letter-spacing: 2vmin;
   }
 
 }

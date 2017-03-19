@@ -1,9 +1,25 @@
 @import 'colors';
 
+@media screen and (min-width: 480px) {
+  * {
+     font-size: 3vmin;
+  }
+}
+
+* {
+   font-size: 5vmin;
+}
+
+@media screen and (min-width: 1000px) {
+  * {
+     font-size: 3vmin;
+  }
+}
+
 body {
   background: #f1f1f1;
   padding-top: 30px;
-  color: $primary-text-color
+  color: $primary-text-color;
 }
 
 a:link {
@@ -28,4 +44,12 @@ a:active {
 
 .fa {
   padding-right: .5rem;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
 }
