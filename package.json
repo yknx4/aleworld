@@ -107,6 +107,7 @@
     "classnames": "2.2.5",
     "express": "4.14.0",
     "lodash": "4.15.0",
+    "raven": "^1.2.0",
     "raven-js": "3.6.1",
     "react": "15.3.1",
     "react-bootstrap": "^0.30.8",
