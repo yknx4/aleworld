@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import CoinCap from 'services/CoinCap';
+
+const {log} = console;
 
 export default class CryptoIndicator extends Component {
   render() {
@@ -7,3 +10,11 @@ export default class CryptoIndicator extends Component {
     );
   }
 }
+
+CryptoIndicator.propTypes = {
+  coin: PropTypes.string
+};
+
+CryptoIndicator.defaultProps = {
+  coin: 'BTC'
+};

@@ -1,29 +1,48 @@
 
 import {connect} from 'socket.io-client';
-import {isFunction, isEmpty, each} from 'lodash';
+import {isFunction, isEmpty, each, isUndefined} from 'lodash';
+
+const {info} = console;
 
 const EventTypes = {
   Global: Symbol('coincap-global'),
+  Trade: Symbol('coincap-trade'),
+};
+
+const SocketEvents = {
+  [EventTypes.Global]: 'global',
+  [EventTypes.Trade]: 'trades'
 };
 
 class CoinCap {
   constructor() {
-    this.eventListeners = {
-      [EventTypes.Global]: []
-    };
+    info('Creating CoinCap.');
     this.socket = null;
+    this.eventListeners = {};
+    this.coinListeners = {};
+    this.addGlobalListener = this._addEventListener.bind(this, EventTypes.Global);
+    this.addTradeListener = this._addEventListener.bind(this, EventTypes.Trade);
+    each(EventTypes, this.initListeners.bind(this));
   }
 
   init() {
+    info('Initializing CoinCap.');
     this.socket = connect('http://socket.coincap.io');
-    const {socket, eventListeners} = this;
-    const listeners = eventListeners[EventTypes.Global];
+    each(EventTypes, this.bindEvent.bind(this));
+  }
 
-    socket.on('global', function (globalMsg) {
+  initListeners(type) {
+    this.eventListeners[type] = [];
+  }
+
+  bindEvent(type) {
+    const eventType = SocketEvents[type];
+    const listeners = this.eventListeners[type];
+    this.socket.on(eventType, (msg) => {
       if (!isEmpty(listeners)) {
-        each(listeners, (fn) => fn(globalMsg));
+        each(listeners, (fn) => fn(msg));
       }
-   });
+    });
   }
 
   _addEventListener(type, listener) {
@@ -34,14 +53,25 @@ class CoinCap {
     return listener;
   }
 
-  addGlobalListener(listener) {
-    return this._addEventListener(EventTypes.Global, listener);
+  addCoinListener(listener, type="BTC") {
+    if (!isFunction(listener)) {
+      throw new TypeError('Listener should be a function');
+    }
+    if (isUndefined(this.coinListeners[type])) {
+      this.coinListeners[type] = [];
+    }
+    this.coinListeners[type].push(listener);
+    return listener;
   }
 }
 
-export default CoinCap;
+const singleton = new CoinCap();
+singleton.init();
+
+export default singleton;
 
 export {
   CoinCap,
-  EventTypes
+  EventTypes,
+  SocketEvents
 };

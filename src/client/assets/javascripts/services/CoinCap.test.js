@@ -1,4 +1,4 @@
-import CoinCap, {EventTypes as coincapEventTypes} from './CoinCap';
+import {CoinCap, EventTypes as coincapEventTypes} from './CoinCap';
 
 describe('Coincap', () => {
   let coincap;
@@ -21,6 +21,8 @@ describe('Coincap', () => {
   });
 
   describe('event listeners', () => {
+    let spyListener = jest.fn();
+
     beforeAll(() => {
       coincap.init();
     });
@@ -29,20 +31,38 @@ describe('Coincap', () => {
       expect(coincap.eventListeners[coincapEventTypes.Global]).toBeArray;
     });
 
+    it('should create an trade listeners array', () => {
+      expect(coincap.eventListeners[coincapEventTypes.Trade]).toBeArray;
+    });
+
     describe('_addEventListener', () => {
       it('should thrown if listener is not a function', () => {
         expect(() => {
           coincap._addEventListener('t', null);
         }).toThrow();
       });
-    });
-
-    describe('addGlobalListener', () => {
-      let spyListener = jest.fn();
 
       it('should add an event listener to the global listeners array', () => {
         coincap.addGlobalListener(spyListener);
         expect(coincap.eventListeners[coincapEventTypes.Global]).toContain(spyListener);
+      });
+    });
+
+    describe('addCoinListener', () => {
+      it('should thrown if listener is not a function', () => {
+        expect(() => {
+          coincap.addCoinListener(null);
+        }).toThrow();
+      });
+
+      it('should add an event listener to the BTC listener array', () => {
+        coincap.addCoinListener(spyListener);
+        expect(coincap.coinListeners['BTC']).toContain(spyListener);
+      });
+
+      it('should add an event listener to the DASH listener array', () => {
+        coincap.addCoinListener(spyListener, 'DASH');
+        expect(coincap.coinListeners['DASH']).toContain(spyListener);
       });
     });
 
