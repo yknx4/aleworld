@@ -30,7 +30,7 @@ class CoinCap {
     if (!isFunction(listener)) {
       throw new TypeError('Listener should be a function');
     }
-    this.eventListeners[type] = listener;
+    this.eventListeners[type].push(listener);
     return listener;
   }
 
