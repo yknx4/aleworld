@@ -43,7 +43,13 @@ a:active {
 }
 
 .fa {
-  padding-right: .5rem;
+  padding-right: 1vh;
+}
+
+@media screen and (min-width: 1000px) {
+  .fa {
+    padding-right: 1.5vh;
+  }
 }
 
 .vertical-center {
