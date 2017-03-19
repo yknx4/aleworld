@@ -15,7 +15,7 @@ const currentBranch = require('git-branch').sync();
 const deployBranch = options.branch;
 
 if (currentBranch !== deployBranch) {
-  console.log(`The branch to deploy must be '${deployBranch}', you are currently on '${currentBranch}'.`);
+  log(`The branch to deploy must be '${deployBranch}', you are currently on '${currentBranch}'.`);
   process.exit();
 }
 
@@ -23,9 +23,10 @@ log('Deploying...');
 log('Building production files...');
 exec('yarn build');
 log('Copying production files...');
+log(' ');
 
 if (exists('docs/CNAME')) {
-  log('Backup of CNAME configuration...')
+  log('Backup of CNAME configuration...');
   mv('docs/CNAME', 'CNAME');
 }
 
@@ -33,11 +34,15 @@ rm('-rf', 'docs');
 cp('-R', 'build/client', 'docs');
 
 if (exists('CNAME')) {
-  log('Restore of CNAME configuration...')
+  log('Restore of CNAME configuration...');
   mv('CNAME', 'docs/CNAME');
 }
 
+log(' ');
 log('Creating git commit');
 exec('git reset .');
 exec('git add docs');
 exec(`git commit -m "Client Deploy ${today}"`);
+log(' ');
+log(`Deploying to ${deployBranch}`);
+exec(`git push origin ${deployBranch}`);
