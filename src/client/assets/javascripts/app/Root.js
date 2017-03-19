@@ -19,7 +19,6 @@ window.Raven && Raven.config(SENTRY_URL).install();
 
 const HelmetSettings = {
   link: [
-    { rel: "stylesheets", href: "//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" }
   ]
 };
 

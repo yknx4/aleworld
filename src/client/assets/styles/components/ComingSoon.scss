@@ -1,6 +1,5 @@
 @import "../colors";
 .comingsoon {
-  font-family: 'Open Sans Condensed', sans-serif;
   padding: 1em;
   text-align: center;
   .header {
@@ -10,6 +9,7 @@
     }
   }
   h1 {
+    font-family: 'Open Sans Condensed', sans-serif;
     font-size: 10vmin;
     font-weight: 300;
     font-style: normal;
