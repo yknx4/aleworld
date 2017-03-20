@@ -9,7 +9,6 @@ import Root from './Root';
 import configureStore from './store/configureStore';
 
 import 'bootstrap-loader';
-import 'styles/styles.scss';
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);

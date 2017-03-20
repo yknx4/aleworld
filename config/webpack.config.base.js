@@ -2,7 +2,6 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 
 module.exports = {
   output: {
@@ -18,7 +17,7 @@ module.exports = {
       'node_modules'
     ],
     alias: {
-      models: path.join(__dirname, '../src/client/assets/javascripts/models')
+      models: path.join(__dirname, '../src/client/assets/javascripts/models'),
     },
     extensions: ['.js', '.jsx', '.json', '.scss']
   },
@@ -34,39 +33,42 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [
+    rules: [
       // JavaScript / ES6
       {
         test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
         include: path.resolve(__dirname, '../src/client/assets/javascripts'),
-        loader: 'babel'
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true
+          }
+        }
       },
       // Images
       // Inline base64 URLs for <=8k images, direct URLs for the rest
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
-        loader: 'url',
-        query: {
-          limit: 8192,
-          name: 'images/[name].[ext]?[hash]'
-        }
+        use: {
+          loader: 'url-loader',
+          query: {
+            limit: 8192,
+            name: 'images/[name].[ext]?[hash]'
+          },
+        },
       },
       // Fonts
       {
         test: /\.(woff|woff2|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url',
-        query: {
-          limit: 8192,
-          name: 'fonts/[name].[ext]?[hash]'
-        }
+        use:{
+          loader: 'url-loader',
+          query: {
+            limit: 8192,
+            name: 'fonts/[name].[ext]?[hash]'
+          }
+        },
       }
     ]
-  },
-  postcss: function () {
-    return [
-      autoprefixer({
-        browsers: ['last 2 versions']
-      })
-    ];
   }
 };

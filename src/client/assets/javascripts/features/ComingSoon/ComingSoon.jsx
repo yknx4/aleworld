@@ -1,5 +1,5 @@
 import React from 'react';
-import 'styles/components/ComingSoon.scss';
+import a from 'styles/components/ComingSoon.scss';
 import AwesomeLink from 'components/AwesomeLink';
 import { Row, Col } from 'react-bootstrap';
 import CryptoIndicator from 'components/CryptoIndicator';

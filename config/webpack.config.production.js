@@ -13,7 +13,6 @@ const GLOBALS = {
 };
 
 module.exports = merge(config, {
-  debug: false,
   devtool: 'cheap-module-source-map',
   entry: {
     application: 'production',
@@ -26,6 +25,9 @@ module.exports = merge(config, {
         to: 'images'
       }
     ]),
+    new webpack.LoaderOptionsPlugin({
+       debug: false
+     }),
     // Avoid publishing files when compilation fails
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin(GLOBALS),
@@ -51,7 +53,7 @@ module.exports = merge(config, {
   ],
   module: {
     noParse: /\.min\.js$/,
-    loaders: [
+    rules: [
       // Sass
       {
         test: /\.scss$/,
@@ -60,12 +62,17 @@ module.exports = merge(config, {
           path.resolve(__dirname, '../src/client/assets/styles'),
           path.resolve(__dirname, '../src/client/scripts')
         ],
-        loader: ExtractTextPlugin.extract({
+        use: ExtractTextPlugin.extract({
           fallbackLoader: 'style',
           loader: [
-            { loader: 'css', query: { sourceMap: true } },
-            'postcss',
-            { loader: 'sass', query: { outputStyle: 'compressed' } }
+            { loader: 'css-loader', query: { sourceMap: true } },
+            { loader: 'sass-loader',
+              query: { outputStyle: 'compressed' },
+            },
+            {
+              loader: 'sass-resources-loader',
+              resources: 'config/sass-resources.scss',
+            },
           ]
         })
       },
@@ -77,12 +84,11 @@ module.exports = merge(config, {
           path.resolve(__dirname, '../src/client/assets/styles'),
           path.resolve(__dirname, '../src/client/scripts')
         ],
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style',
+        use: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
           loader: [
-            { loader: 'css', query: { sourceMap: true } },
-            'postcss',
-            'less'
+            { loader: 'css-loader', query: { sourceMap: true } },
+            'less-loader'
           ]
         })
       },
@@ -109,9 +115,9 @@ module.exports = merge(config, {
       // CSS
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style',
-          loader: ['css', 'postcss']
+        use: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: ['css-loader']
         })
       }
     ]

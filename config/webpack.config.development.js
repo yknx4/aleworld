@@ -11,23 +11,25 @@ const GLOBALS = {
 };
 
 module.exports = merge(config, {
-  debug: true,
   cache: true,
   devtool: 'cheap-module-eval-source-map',
   entry: {
     application: [
       'webpack-hot-middleware/client',
       'react-hot-loader/patch',
-      'development'
+      'development',
     ],
     vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux']
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.DefinePlugin(GLOBALS)
+    new webpack.DefinePlugin(GLOBALS),
+    new webpack.LoaderOptionsPlugin({
+       debug: true
+     })
   ],
   module: {
-    loaders: [
+    rules: [
       // Sass
       {
         test: /\.scss$/,
@@ -36,11 +38,23 @@ module.exports = merge(config, {
           path.resolve(__dirname, '../src/client/assets/styles'),
           path.resolve(__dirname, '../src/client/scripts')
         ],
-        loaders: [
-          'style',
-          'css',
-          'postcss',
-          { loader: 'sass', query: { outputStyle: 'expanded' } }
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader',
+            query: { outputStyle: 'expanded' },
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: 'config/sass-resources.scss',
+            }
+          },
         ]
       },
       // Less
@@ -51,11 +65,10 @@ module.exports = merge(config, {
           path.resolve(__dirname, '../src/client/assets/styles'),
           path.resolve(__dirname, '../src/client/scripts')
         ],
-        loaders: [
-          'style',
-          'css',
-          'postcss',
-          'less',
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader',
         ]
       },
       // Sass + CSS Modules
@@ -79,7 +92,7 @@ module.exports = merge(config, {
       // CSS
       {
         test: /\.css$/,
-        loader: 'style!css!postcss'
+        use: 'style-loader!css-loader!postcss-loader'
       }
     ]
   }

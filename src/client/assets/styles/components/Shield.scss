@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600');
+
+.shield {
+  @include box-sizing(content-box)
+  display: inline-block;
+  padding: 4px;
+  overflow: auto;
+  border: none;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font: normal 16px/1 "source-sans-pro", Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgba(255,255,255,1);
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: rgba(63,63,63,1);
+}
