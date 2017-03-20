@@ -25,7 +25,9 @@ export default class ComingSoon extends React.Component {
               <small>Ale Figueroa ❤︎</small>
             </Row>
             <Row componentClass="section">
-              <CryptoIndicator />
+              <CryptoIndicator coin="BTC" />
+              <CryptoIndicator coin="DASH" />
+              <CryptoIndicator coin="ETH" />
             </Row>
           </Col>
       </Row>
