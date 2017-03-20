@@ -3,15 +3,26 @@
 .shield {
   @include box-sizing(content-box)
   display: inline-block;
-  padding: 4px;
+  padding: .2rem;
   overflow: auto;
   border: none;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  font: normal 16px/1 "source-sans-pro", Helvetica, sans-serif;
   font-family: 'Source Sans Pro', sans-serif;
   color: rgba(255,255,255,1);
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
-  background: rgba(63,63,63,1);
+  font-size: .4rem;
+  text-align: center;
+  width: 1rem;
+  height: .5rem;
+}
+
+.shield-left {
+  @extend .shield;
+  @include border-left-radius(.1rem);
+  background: $material-gray-800;
+}
+.shield-right {
+  @extend .shield;
+  @include border-right-radius(.1rem);
+  background: $primary-color-dark;
 }
