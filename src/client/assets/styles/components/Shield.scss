@@ -9,23 +9,23 @@
   color: rgba(255,255,255,1);
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
-  font-size: .1em;
+  font-size: 5px;
   text-align: center;
-  width: 10em;
-  height: 10em;
-  margin-top: .1em;
-  margin-bottom: .1em;
+  width: 20px;
+  height: 10px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 .shield-left {
   @extend .shield;
-  @include border-left-radius(.1em);
+  @include border-left-radius(1px);
   background: $material-gray-800;
-  margin-left: .1em;
+  margin-left: 1px;
 }
 .shield-right {
   @extend .shield;
-  @include border-right-radius(.1em);
+  @include border-right-radius(1px);
   background: $primary-color-dark;
-  margin-right: .1em;
+  margin-right: 1px;
 }

@@ -35,7 +35,7 @@ export default class CryptoIndicator extends Component {
   render() {
     const {coin} = this.props;
     const {value} = this.state;
-    const formatedValue = value == null ? '...' : numeral(value).format('($0.000a)');
+    const formatedValue = value == null ? '...' : numeral(value).format('($0.00a)');
     return (
       <Shield left={coin} right={formatedValue}/>
     );
