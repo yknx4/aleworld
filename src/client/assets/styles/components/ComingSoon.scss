@@ -1,6 +1,5 @@
 .comingsoon {
   padding: 1em;
-  text-align: center;
   .header {
     small {
       display: block;
@@ -12,7 +11,12 @@
     font-size: 10vmin;
     font-weight: 300;
     font-style: normal;
-    text-align: center;
     letter-spacing: 2vmin;
+  }
+  .crypto {
+    padding-top: 5vh;
+    width: auto;
+    margin: auto;
+    display: block;
   }
 }

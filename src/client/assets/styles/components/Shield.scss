@@ -1,33 +1,74 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,200');
+
+$size-1-vh: .25vh;
+$height-vh: 4vh;
+
+$shield-font-size: 1vmax;
+$shield-padding: 1vh;
+
+$inner-master-padding: $shield-padding - (2 * $size-1-vh);
+$inner-secondary-padding: $shield-padding - $size-1-vh;
+
+$shield-border-radius: $height-vh / 6;
 
 .shield {
-  @include box-sizing(content-box)
-  display: inline-block;
-  overflow: auto;
-  border: none;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: rgba(255,255,255,1);
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  font-size: 2vh;
-  width: 3vw;
-  height: 4vh;
-  line-height: 4vh;
-  margin-top: .1vh;
-  margin-bottom: .1vh;
-}
+  height: $height-vh;
+  line-height: $height-vh;
+  margin: $size-1-vh;
+  padding-top: $size-1-vh;
+  display:inline-block;
+  table-layout: fixed;
+  font-size: $shield-font-size;
 
-.shield-left {
-  @extend .shield;
-  @include border-left-radius(.25vmax);
-  background: $material-gray-800;
-  margin-left: .1vw;
-  text-align: center;
-}
-.shield-right {
-  @extend .shield;
-  @include border-right-radius(.25vmax);
-  background: $primary-color-dark;
-  margin-right: .1vw;
-  text-align: center;
+  ._shield {
+    @include box-sizing(content-box);
+    overflow: auto;
+    border: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgba(255,255,255,1);
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: table-cell;
+    width: auto;
+  }
+
+  .shield-left {
+    @extend ._shield;
+    @include border-left-radius($shield-border-radius);
+    background: $material-gray-800;
+    text-align: right;
+    font-weight: 400;
+    padding-right: $inner-secondary-padding;
+    padding-left: $inner-master-padding;
+  }
+  .shield-right {
+    @extend ._shield;
+    @include border-right-radius($shield-border-radius);
+    background: $primary-color-dark;
+    text-align: left;
+    font-weight: 200;
+    padding-right: $inner-master-padding;
+    padding-left: $inner-secondary-padding;
+  }
+
+  @media screen and (min-width: 1135px) {
+    ._shield {
+      // font-size: 2vh;
+      // line-height: 3vh;
+      // margin-top: .1vh;
+      // margin-bottom: .1vh;
+    }
+
+    .shield-right {
+      // @include border-left-radius(.25vmax);
+      // margin-right: .1vw;
+      // font-weight: 300;
+    }
+
+    .shield-left {
+      // @include border-left-radius(.25vmax);
+      // margin-left: .1vw;
+      // font-weight: 600;
+    }
+  }
 }

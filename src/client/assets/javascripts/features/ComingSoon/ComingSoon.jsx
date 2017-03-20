@@ -7,15 +7,15 @@ import CryptoIndicator from 'components/CryptoIndicator';
 export default class ComingSoon extends React.Component {
   render() {
     return (
-      <Row componentClass="section" className="comingsoon vertical-center">
-          <Col xs={12} componentClass="section" className="header">
-            <Row componentClass="section">
+      <Row className="comingsoon vertical-center text-center">
+          <Col xs={12} className="header">
+            <Row >
               <h1>Ale.World❤︎</h1>
               <hr />
               <p>
                 Coming Soon. Visit <a href="https://yknx4.github.io/blog">my blog</a>.
               </p>
-              <span>
+              <span >
                 <AwesomeLink name="facebook" href="//www.facebook.com/yknx4" />
                 <AwesomeLink name="github-alt" href="//www.github.com/yknx4" />
                 <AwesomeLink name="linkedin" href="//www.linkedin.com/in/yknx4/" />
@@ -24,10 +24,12 @@ export default class ComingSoon extends React.Component {
               </span>
               <small>Ale Figueroa ❤︎</small>
             </Row>
-            <Row componentClass="section">
-              <CryptoIndicator coin="BTC" />
-              <CryptoIndicator coin="DASH" />
-              <CryptoIndicator coin="ETH" />
+            <Row className="crypto">
+              <Col xsOffset={2} xs={8}>
+                <CryptoIndicator coin="BTC" />
+                <CryptoIndicator coin="DASH" />
+                <CryptoIndicator coin="ETH" />
+              </Col>
             </Row>
           </Col>
       </Row>

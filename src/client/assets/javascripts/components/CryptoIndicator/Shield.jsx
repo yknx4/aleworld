@@ -3,12 +3,12 @@ import 'styles/components/Shield.scss';
 
 export default function Shield ({left, right}) {
   return (
-    <span>
-      <span className="shield-left">
+    <div className="shield">
+      <div className="shield-left">
         {left}
-      </span>
-      <span className="shield-right">{right}</span>
-    </span>
+      </div>
+      <div className="shield-right">{right}</div>
+    </div>
   );
 }
 
