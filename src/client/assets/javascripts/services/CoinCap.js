@@ -1,6 +1,6 @@
 
 import {connect} from 'socket.io-client';
-import {isFunction, isEmpty, each, isUndefined} from 'lodash';
+import {isFunction, isEmpty, each, isUndefined, pull} from 'lodash';
 
 const {info, log} = console;
 
@@ -71,6 +71,13 @@ class CoinCap {
     }
     this.coinListeners[type].push(listener);
     return listener;
+  }
+
+  removeCoinListener(listener, type="BTC") {
+    if (isUndefined(this.coinListeners[type])) {
+      return;
+    }
+    pull(this.coinListeners[type], listener);
   }
 }
 

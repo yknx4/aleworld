@@ -1,14 +1,18 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import 'styles/components/Shield.scss';
-import p from 'images/coins/BTC-alt.svg';
 
-export default function Shield (props) {
+export default function Shield ({left, right}) {
   return (
     <span>
       <span className="shield-left">
-        BTC
+        {left}
       </span>
-      <span className="shield-right">$1.1K</span>
+      <span className="shield-right">{right}</span>
     </span>
   );
 }
+
+Shield.propTypes = {
+  left: PropTypes.string.isRequired,
+  right: PropTypes.string.isRequired,
+};

@@ -8,8 +8,6 @@ import Redbox from 'redbox-react';
 import Root from './Root';
 import configureStore from './store/configureStore';
 
-import 'bootstrap-loader';
-
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 

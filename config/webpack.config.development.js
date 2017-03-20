@@ -15,6 +15,7 @@ module.exports = merge(config, {
   devtool: 'cheap-module-eval-source-map',
   entry: {
     application: [
+      'bootstrap-loader',
       'webpack-hot-middleware/client',
       'react-hot-loader/patch',
       'development',
