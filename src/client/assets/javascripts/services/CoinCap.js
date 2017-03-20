@@ -2,7 +2,7 @@
 import {connect} from 'socket.io-client';
 import {isFunction, isEmpty, each, isUndefined} from 'lodash';
 
-const {info} = console;
+const {info, log} = console;
 
 const EventTypes = {
   Global: Symbol('coincap-global'),
@@ -29,6 +29,7 @@ class CoinCap {
     info('Initializing CoinCap.');
     this.socket = connect('http://socket.coincap.io');
     each(EventTypes, this.bindEvent.bind(this));
+    this.addTradeListener(this.checkCoin.bind(this));
   }
 
   initListeners(type) {
@@ -43,6 +44,14 @@ class CoinCap {
         each(listeners, (fn) => fn(msg));
       }
     });
+  }
+
+  checkCoin(response) {
+    const {coin, msg} = response.message;
+    const listeners = this.coinListeners[coin];
+    if (!isEmpty(this.coinListeners[coin])) {
+        each(listeners, (fn) => fn(msg, coin));
+    }
   }
 
   _addEventListener(type, listener) {
