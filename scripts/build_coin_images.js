@@ -6,7 +6,7 @@ const {last, each} = require('lodash');
 const {log} = console;
 
 const prefix = '../src/client/assets/images/coins';
-const output = '../build/client/images/coins';
+const output = '../src/client/assets/images/coins';
 
 const files = readDir('../src/client/assets/images/coins').filter((f) => last(f.split('.')) === 'svg');
 
