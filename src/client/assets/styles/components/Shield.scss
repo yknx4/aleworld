@@ -1,24 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,200');
 
-$size-1-vh: .25vh;
-$height-vh: 4vh;
+$shield-font-size: .75vmax;
+$shield-font-size-em: 1em;
+$shield-padding: .3em;
+$height-1: 6em;
 
-$shield-font-size: 1vmax;
-$shield-padding: 1vh;
+$inner-master-padding: $shield-padding;
+$inner-secondary-padding: $shield-padding / 2;
 
-$inner-master-padding: $shield-padding - (2 * $size-1-vh);
-$inner-secondary-padding: $shield-padding - $size-1-vh;
-
-$shield-border-radius: $height-vh / 6;
+$shield-border-radius: .1em;
 
 .shield {
-  height: $height-vh;
-  line-height: $height-vh;
-  margin: $size-1-vh;
-  padding-top: $size-1-vh;
+  height: $height-1;
   display:inline-block;
   table-layout: fixed;
   font-size: $shield-font-size;
+  line-height: $shield-font-size-em;
 
   ._shield {
     @include box-sizing(content-box);
@@ -30,6 +27,8 @@ $shield-border-radius: $height-vh / 6;
     text-overflow: ellipsis;
     display: table-cell;
     width: auto;
+    padding-top: $shield-padding * 2;
+    padding-bottom: $shield-padding * 2;
   }
 
   .shield-left {
