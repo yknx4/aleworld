@@ -17,12 +17,14 @@ module.exports = {
     "browser": true,
     "node": true,
     "es6": true,
-    "mocha": true
+    "mocha": true,
+    "jest/globals": true
   },
 
   "plugins": [
     "react",
-    "flowtype"
+    "flowtype",
+    "jest"
   ],
 
   "globals": {
@@ -94,6 +96,10 @@ module.exports = {
     // marks Flow type alias declarations as used
     'flowtype/use-flow-type': "off",
     // checks for simple Flow syntax errors
-    'flowtype/valid-syntax': "error"
+    'flowtype/valid-syntax': "error",
+
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
   }
 };
