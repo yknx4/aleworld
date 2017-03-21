@@ -42,6 +42,12 @@ a:visited {
   color: $primary-color-light
 }
 
+span {
+  a:visited {
+    color: $primary-color
+  }
+}
+
 a:hover {
   color: $primary-color-dark !important
 }
