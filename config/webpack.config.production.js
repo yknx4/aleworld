@@ -13,7 +13,7 @@ const GLOBALS = {
 };
 
 module.exports = merge(config, {
-  devtool: 'cheap-module-source-map',
+  devtool: 'source-map',
   entry: {
     application: 'production',
     vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux']
@@ -29,9 +29,8 @@ module.exports = merge(config, {
        debug: false
      }),
     // Avoid publishing files when compilation fails
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin(GLOBALS),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
@@ -63,15 +62,13 @@ module.exports = merge(config, {
           path.resolve(__dirname, '../src/client/scripts')
         ],
         use: ExtractTextPlugin.extract({
-          fallbackLoader: 'style',
-          loader: [
-            { loader: 'css-loader', query: { sourceMap: true } },
-            { loader: 'sass-loader',
-              query: { outputStyle: 'compressed' },
-            },
+          fallback: 'style-loader',
+          use: ['css-loader?sourceMap', 'sass-loader?sourceMap',
             {
               loader: 'sass-resources-loader',
-              resources: 'config/sass-resources.scss',
+              options:{
+                resources: 'config/sass-resources.scss',
+              }
             },
           ]
         })
@@ -85,39 +82,16 @@ module.exports = merge(config, {
           path.resolve(__dirname, '../src/client/scripts')
         ],
         use: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: [
-            { loader: 'css-loader', query: { sourceMap: true } },
-            'less-loader'
-          ]
+          fallback: 'style-loader',
+          use: ['css-loader', 'less-loader']
         })
       },
-      // Sass + CSS Modules
-      // {
-      //   test: /\.scss$/,
-      //   include: /src\/client\/assets\/javascripts/,
-      //   loader: ExtractTextPlugin.extract({
-      //     fallbackLoader: 'style',
-      //     loader: [
-      //       {
-      //         loader: 'css',
-      //         query: {
-      //           modules: true,
-      //           importLoaders: 1,
-      //           localIdentName: '[path][name]__[local]--[hash:base64:5]'
-      //         }
-      //       },
-      //       'postcss',
-      //       { loader: 'sass', query: { outputStyle: 'compressed' } }
-      //     ]
-      //   })
-      // },
       // CSS
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: ['css-loader']
+          fallback: 'style-loader',
+          use: 'css-loader',
         })
       }
     ]

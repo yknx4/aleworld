@@ -48,7 +48,7 @@ module.exports = merge(config, {
           },
           {
             loader: 'sass-loader',
-            query: { outputStyle: 'expanded' },
+            options: { outputStyle: 'expanded' },
           },
           {
             loader: 'sass-resources-loader',
@@ -80,14 +80,14 @@ module.exports = merge(config, {
       //     'style',
       //     {
       //       loader: 'css',
-      //       query: {
+      //       options: {
       //         modules: true,
       //         importLoaders: 1,
       //         localIdentName: '[path][name]__[local]--[hash:base64:5]'
       //       }
       //     },
       //     'postcss',
-      //     { loader: 'sass', query: { outputStyle: 'expanded' } }
+      //     { loader: 'sass', options: { outputStyle: 'expanded' } }
       //   ]
       // },
       // CSS
