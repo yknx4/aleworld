@@ -39,7 +39,31 @@ $lg-font-size: 16px;
     text-align: right;
     padding-right: $shield-padding;
     padding-left: $shield-padding;
+    i {
+      display: inherit;
+      font-size: inherit;
+      speak: inherit;
+      text-transform: inherit;
+      line-height: inherit;
+    }
+    span {
+      display: none;
+      font-size: inherit;
+      speak: inherit;
+      text-transform: inherit;
+      line-height: inherit;
+    }
   }
+
+  .shield-left:hover {
+    i {
+      display: none;
+    }
+    span {
+      display: inherit;
+    }
+  }
+
   .shield-right {
     @extend ._shield;
     @include border-right-radius($shield-border-radius);
@@ -51,13 +75,13 @@ $lg-font-size: 16px;
 
   @media (min-width: $screen-sm-min) {
     ._shield {
-      font-size: $sm-font-size !important;
+      font-size: $sm-font-size;
     }
   }
 
   @media (min-width: $screen-md-min) {
     ._shield {
-      font-size: $md-font-size !important;
+      font-size: $md-font-size;
     }
     .shield-right {
       font-weight: 200;
@@ -66,7 +90,8 @@ $lg-font-size: 16px;
 
   @media (min-width: $screen-lg-min) {
     ._shield {
-      font-size: $lg-font-size !important;
+      font-size: $lg-font-size;
     }
   }
+
 }

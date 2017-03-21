@@ -52,7 +52,7 @@ module.exports = {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
         use: {
           loader: 'url-loader',
-          query: {
+          options: {
             limit: 8192,
             name: 'images/[name].[ext]?[hash]'
           },
@@ -60,14 +60,13 @@ module.exports = {
       },
       // Fonts
       {
-        test: /\.(woff|woff2|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use:{
-          loader: 'url-loader',
-          query: {
-            limit: 8192,
-            name: 'fonts/[name].[ext]?[hash]'
-          }
-        },
+        test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: {
+            loader: 'file-loader',
+            options: {
+              name: 'fonts/[name].[ext]?[hash]'
+            }
+          },
       }
     ]
   }

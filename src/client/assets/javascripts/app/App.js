@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 const App = (props) => (
-  <div className="container-fluid">
+  <div className="container">
     {React.cloneElement({...props}.children, {...props})}
   </div>
 );

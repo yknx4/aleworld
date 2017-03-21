@@ -37,7 +37,7 @@ export default class CryptoIndicator extends Component {
     const {value} = this.state;
     const formatedValue = value == null ? '$' : numeral(value).format('($0.00a)');
     return (
-      <Shield left={coin} right={formatedValue}/>
+      <Shield left={coin} right={formatedValue} iconClass={`cc ${coin}-alt`} />
     );
   }
 }
