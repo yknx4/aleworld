@@ -1,21 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,200');
 
-$shield-font-size: .75vmax;
+$shield-font-size: 3vw;
 $shield-font-size-em: 1em;
 $shield-padding: .3em;
 $height-1: 6em;
 
-$inner-master-padding: $shield-padding;
-$inner-secondary-padding: $shield-padding / 2;
-
 $shield-border-radius: .1em;
 
+$sm-font-size: 2.2vw;
+$md-font-size: 1.2vw;
+$lg-font-size: 16px;
+
 .shield {
-  height: $height-1;
   display:inline-block;
   table-layout: fixed;
-  font-size: $shield-font-size;
-  line-height: $shield-font-size-em;
 
   ._shield {
     @include box-sizing(content-box);
@@ -27,8 +25,10 @@ $shield-border-radius: .1em;
     text-overflow: ellipsis;
     display: table-cell;
     width: auto;
-    padding-top: $shield-padding * 2;
-    padding-bottom: $shield-padding * 2;
+    font-size: $shield-font-size;
+    line-height: $shield-font-size-em;
+    padding-top: $shield-padding;
+    padding-bottom: $shield-padding;
   }
 
   .shield-left {
@@ -37,8 +37,8 @@ $shield-border-radius: .1em;
     background: $material-gray-800;
     text-align: right;
     font-weight: 400;
-    padding-right: $inner-secondary-padding;
-    padding-left: $inner-master-padding;
+    padding-right: $shield-padding;
+    padding-left: $shield-padding;
   }
   .shield-right {
     @extend ._shield;
@@ -46,28 +46,25 @@ $shield-border-radius: .1em;
     background: $primary-color-dark;
     text-align: left;
     font-weight: 200;
-    padding-right: $inner-master-padding;
-    padding-left: $inner-secondary-padding;
+    padding-right: $shield-padding;
+    padding-left: $shield-padding;
   }
 
-  @media screen and (min-width: 1135px) {
+  @media (min-width: $screen-sm-min) {
     ._shield {
-      // font-size: 2vh;
-      // line-height: 3vh;
-      // margin-top: .1vh;
-      // margin-bottom: .1vh;
+      font-size: $sm-font-size !important;
     }
+  }
 
-    .shield-right {
-      // @include border-left-radius(.25vmax);
-      // margin-right: .1vw;
-      // font-weight: 300;
+  @media (min-width: $screen-md-min) {
+    ._shield {
+      font-size: $md-font-size !important;
     }
+  }
 
-    .shield-left {
-      // @include border-left-radius(.25vmax);
-      // margin-left: .1vw;
-      // font-weight: 600;
+  @media (min-width: $screen-lg-min) {
+    ._shield {
+      font-size: $lg-font-size !important;
     }
   }
 }

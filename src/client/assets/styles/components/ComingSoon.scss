@@ -8,15 +8,29 @@
   }
   h1 {
     font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 10vmin;
+    font-size: 10vw;
     font-weight: 300;
     font-style: normal;
-    letter-spacing: 2vmin;
+    letter-spacing: 2vw;
   }
   .crypto {
-    padding-top: 5vh;
+    padding-top: 1em;
     width: auto;
     margin: auto;
     display: block;
+    .shield {
+      margin-left: .5vw;
+      margin-right: .5vw;
+    }
   }
+}
+
+@media (min-width: $screen-lg-min) {
+  .comingsoon {
+    h1 {
+      font-size: 110px;
+      letter-spacing: 22px;
+    }
+  }
+
 }
