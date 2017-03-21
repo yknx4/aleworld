@@ -29,6 +29,7 @@ $lg-font-size: 16px;
     line-height: $shield-font-size-em;
     padding-top: $shield-padding;
     padding-bottom: $shield-padding;
+    font-weight: 400;
   }
 
   .shield-left {
@@ -36,7 +37,6 @@ $lg-font-size: 16px;
     @include border-left-radius($shield-border-radius);
     background: $material-gray-800;
     text-align: right;
-    font-weight: 400;
     padding-right: $shield-padding;
     padding-left: $shield-padding;
   }
@@ -45,7 +45,6 @@ $lg-font-size: 16px;
     @include border-right-radius($shield-border-radius);
     background: $primary-color-dark;
     text-align: left;
-    font-weight: 200;
     padding-right: $shield-padding;
     padding-left: $shield-padding;
   }
@@ -59,6 +58,9 @@ $lg-font-size: 16px;
   @media (min-width: $screen-md-min) {
     ._shield {
       font-size: $md-font-size !important;
+    }
+    .shield-right {
+      font-weight: 200;
     }
   }
 
