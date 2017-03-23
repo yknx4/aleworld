@@ -4,6 +4,7 @@ import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 import Helmet from 'react-helmet';
+import ReactGA from 'react-ga';
 
 import routes from './routes';
 import { SENTRY_URL } from './config';
@@ -17,6 +18,13 @@ import { SENTRY_URL } from './config';
 
 window.Raven && Raven.config(SENTRY_URL).install();
 
+ReactGA.initialize('UA-96115300-1');
+
+function logPageView() {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+}
+
 const HelmetSettings = {
   link: [
   ]
@@ -27,7 +35,7 @@ const Root = ({ store, history }) => {
     <Provider store={store}>
       <div>
         <Helmet {...HelmetSettings} />
-        <Router history={history} routes={routes} />
+        <Router onUpdate={logPageView} history={history} routes={routes} />
       </div>
     </Provider>
   );
