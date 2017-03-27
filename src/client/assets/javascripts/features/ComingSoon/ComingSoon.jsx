@@ -3,14 +3,16 @@ import 'styles/components/ComingSoon.scss';
 import AwesomeLink from 'components/AwesomeLink';
 import { Row, Col } from 'react-bootstrap';
 import CryptoIndicator from 'components/CryptoIndicator';
+import logo from 'images/aleworld-logo.png';
 
 export default class ComingSoon extends React.Component {
   render() {
     return (
       <Row className="comingsoon vertical-center text-center">
           <Col xs={12} className="header">
-            <Row >
-              <h1>Ale.World❤︎</h1>
+            <Row>
+              <div className="logo" />
+              <h1>ale<span className="right">world</span></h1>
               <hr />
               <p>
                 Coming Soon. Visit <a href="https://yknx4.github.io/blog">my blog</a>.

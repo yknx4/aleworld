@@ -1,5 +1,14 @@
 .comingsoon {
   padding: 1em;
+  .logo {
+    margin: auto;
+    width: 10vmax;
+    height: 10vmax;
+    background-image: url("../../images/aleworld-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
   .header {
     small {
       display: block;
@@ -7,11 +16,14 @@
     }
   }
   h1 {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 10vw;
-    font-weight: 300;
+    font-size: 6vw;
     font-style: normal;
-    letter-spacing: 2vw;
+    color: $header-text-color !important;
+    .right {
+      all: inherit;
+      display: inline;
+      color: $primary-color-dark !important;
+    }
   }
   .crypto {
     padding-top: 1em;
@@ -28,8 +40,7 @@
 @media (min-width: $screen-lg-min) {
   .comingsoon {
     h1 {
-      font-size: 110px;
-      letter-spacing: 22px;
+      font-size: 66px;
     }
   }
 

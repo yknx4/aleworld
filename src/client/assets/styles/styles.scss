@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,400,600|Roboto+Condensed:300,400,400i,700|Roboto:300,400,700');
 
+@font-face {
+    font-family: 'texgyreadventorregular';
+    src: url('../../fonts/texgyreadventor-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'texgyreadventorbold';
+    src: url('../../fonts/texgyreadventor-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 $font-size: 4vw;
 $font-size-sm: 3vw;
 $font-size-md: 2.2vw;
@@ -26,6 +41,10 @@ $font-size-lg: 24px;
   * {
      font-size: $font-size-lg;
   }
+}
+
+h1 h2 h3 h4 h5 {
+    font-family: 'texgyreadventorbold', sans-serif;
 }
 
 body {
