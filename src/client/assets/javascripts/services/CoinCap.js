@@ -27,7 +27,7 @@ class CoinCap {
 
   init() {
     info('Initializing CoinCap.');
-    this.socket = connect('http://socket.coincap.io');
+    this.socket = connect('https://socket.coincap.io');
     each(EventTypes, this.bindEvent.bind(this));
     this.addTradeListener(this.checkCoin.bind(this));
   }
