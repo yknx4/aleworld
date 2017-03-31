@@ -93,6 +93,11 @@ module.exports = merge(config, {
       // CSS
       {
         test: /\.css$/,
+        include: [
+          path.resolve(__dirname, '../src/client/assets/javascripts'),
+          path.resolve(__dirname, '../src/client/assets/styles'),
+          path.resolve(__dirname, '../src/client/scripts')
+        ],
         use: ['style-loader', 'css-loader']
       }
     ]
