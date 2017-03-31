@@ -1,0 +1,14 @@
+$side-padding: 3%;
+.nav-container {
+  a h5 {
+    display: inline-block;
+  }
+  .logo {
+    padding-right: $side-padding;
+    padding-left: $side-padding;
+  }
+}
+
+.right-color {
+  color: $primary-color-dark !important;
+}

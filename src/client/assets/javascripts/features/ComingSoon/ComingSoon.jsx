@@ -9,10 +9,10 @@ export default class ComingSoon extends React.Component {
   render() {
     return (
       <Row className="comingsoon vertical-center text-center">
-          <Col xs={12} className="header">
-            <Row>
-              <div className="logo" />
-              <h1>ale<span className="right">world</span></h1>
+        <Col xs={12} className="header">
+          <Row>
+            <div className="logo" />
+            <h1>ale<span className="right">world</span></h1>
               <hr />
               <p>
                 Coming Soon. Visit <a href="https://yknx4.github.io/blog">my blog</a>.
