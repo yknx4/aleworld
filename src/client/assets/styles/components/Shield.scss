@@ -84,7 +84,8 @@ $lg-font-size: 16px;
       font-size: $md-font-size;
     }
     .shield-right {
-      font-weight: 200;
+      // @extend .thin;
+      // font-weight: 200;
     }
   }
 
