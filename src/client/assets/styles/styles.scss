@@ -23,28 +23,28 @@ $font-size-sm: 3vw;
 $font-size-md: 2.2vw;
 $font-size-lg: 24px;
 
-* {
-   font-size: $font-size;
-   font-family: 'Open Sans', sans-serif;
-}
-
-@media (min-width: $screen-sm-min) {
-  * {
-     font-size: $font-size-sm;
-  }
-}
-
-@media (min-width: $screen-md-min) {
-  * {
-     font-size: $font-size-md;
-  }
-}
-
-@media (min-width: $screen-lg-min) {
-  * {
-     font-size: $font-size-lg;
-  }
-}
+// * {
+//    font-size: $font-size;
+//    font-family: 'Open Sans', sans-serif;
+// }
+//
+// @media (min-width: $screen-sm-min) {
+//   * {
+//      font-size: $font-size-sm;
+//   }
+// }
+//
+// @media (min-width: $screen-md-min) {
+//   * {
+//      font-size: $font-size-md;
+//   }
+// }
+//
+// @media (min-width: $screen-lg-min) {
+//   * {
+//      font-size: $font-size-lg;
+//   }
+// }
 
 body {
   background: #f1f1f1;

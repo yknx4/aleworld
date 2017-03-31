@@ -1,7 +1,29 @@
 import React,{Component} from 'react';
 import logo from 'images/aleworld-logo.png';
 import ale from 'images/ale.jpg';
+import ale2 from 'images/ale2.jpg';
+import ale3 from 'images/ale3.jpg';
 import 'styles/components/Beta.scss';
+import SocialList from 'components/social/SocialList';
+
+const socialItems = [
+  {
+    icon: 'github',
+    url: '//www.github.com/yknx4'
+  },
+  {
+    icon: 'facebook',
+    url: '//www.facebook.com/yknx4'
+  },
+  {
+    icon: 'linkedin',
+    url: '//www.linkedin.com/in/yknx4/'
+  },
+  {
+    icon: 'instagram',
+    url: '//www.instagram.com/yknx4/'
+  }
+];
 
 export default class Beta extends Component {
 
@@ -25,11 +47,11 @@ export default class Beta extends Component {
                     <div className="module left">
                       <ul className="menu">
                         <li>
-                          <a href="#">Single</a>
+                          <a href="#">Home</a>
                         </li>
                         <li className="has-dropdown">
                           <a href="#">
-                            Mega Menu
+                            Blog
                           </a>
                           <ul className="mega-menu">
                             <li>
@@ -56,7 +78,7 @@ export default class Beta extends Component {
                         </li>
                         <li className="has-dropdown">
                           <a href="#">
-                            Single Dropdown
+                            Projects
                           </a>
                           <ul>
                             <li className="has-dropdown">
@@ -76,21 +98,24 @@ export default class Beta extends Component {
                       </ul>
                     </div>
 
-                    <div className="module widget-handle language left">
+                    {/* <div className="module widget-handle language left">
                       <ul className="menu">
                         <li className="has-dropdown">
-                          <a href="#">ENG</a>
+                          <a href="#">English</a>
                           <ul>
                             <li>
-                              <a href="#">French</a>
+                              <a href="#">Spanish</a>
                             </li>
                             <li>
-                              <a href="#">Deutsch</a>
+                              <a href="#" className='disabled'>Korean</a>
+                            </li>
+                            <li>
+                              <a href="#" className='disabled'>Japanese</a>
                             </li>
                           </ul>
                         </li>
                       </ul>
-                    </div>
+                    </div> */}
                   </div>
 
                 </div>
@@ -106,25 +131,28 @@ export default class Beta extends Component {
                       <span className="mb0 h1">ale</span>
                       <span className="mb0 h1 right-color">world</span>
                     </div>
+                    <div className="col-sm-12 text-center bl">
+                      <span className="mb0 h4">LifeThoughts, SocialCriticism, and some SoftwareDevelopment</span>
+                    </div>
                   </div>
 
                 </div>
 
                 <ol className="breadcrumb breadcrumb-2">
                   <li>
-                    <a href="#">Home</a>
+                    <a href="#" className="active">Home</a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href="#">Elements</a>
-                  </li>
-                  <li className="active">Page Titles</li>
+                    </li>
+                  <li className="active">Page Titles</li> */}
                 </ol>
               </section><section>
                 <div className="container">
                   <div className="row">
                     <div className="col-md-4 col-sm-6">
-                      <div className="image-tile outer-title text-center">
-                        <img alt="Pic" src="img/team-1.jpg" />
+                      <div className="image-tile outer-title text-justify">
+                        <img alt="Ale Figueroa" src={ale2} className="img-circle sm-img"/>
                         <div className="title mb16">
                           <h5 className="uppercase mb0">Ale Figueroa</h5>
                           <span>Android Developer</span>
@@ -135,23 +163,29 @@ export default class Beta extends Component {
                       </div>
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <div className="image-tile outer-title text-center">
-                        <img alt="Ale Figueroa" src={ale} className="img-thumbnail"/>
+                      <div className="image-tile outer-title text-justify">
+                        <img alt="Ale Figueroa" src={ale3} className="img-circle sm-img"/>
                         <div className="title mb16">
                           <h5 className="uppercase mb0">Ale Figueroa</h5>
-                          <span>Full Stack Developer</span>
+                          <span>Social Rebel Transgirl</span>
                         </div>
                         <p className="mb0">
-                          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+                          I’m a supporter of Social Freedom, Internet Rights and the LGBT Community. I have the opinion that everyone can and shall live however the f*ck they want as long as they don’t harm anyone else’s freedom.
+                          <br/>
+                          I think any society should be free of oppression, and have all their human rights assured regardless of their political, religious, sexual, or whatever position.
+                          <br/>
+                          I think all those rights should be also preserved and enforced in all the modern environments that are constantly surging in the Internet (Yep, This means that you should also be able to do whatever you want on the Internet).
+                          <br/>
+                          And I’m against Gender Roles (a byproduct of sexism), I don’t think a person can be defined by what society tells them they are supposed to be just because the person was born with or without something between the legs. I consider myself transgender, but feel free to address me however you feel you should.
                         </p>
                       </div>
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <div className="image-tile outer-title text-center">
-                        <img alt="Pic" src="img/team-3.jpg" />
+                      <div className="image-tile outer-title text-justify">
+                        <img alt="Ale Figueroa" src={ale} className="img-circle sm-img"/>
                         <div className="title mb16">
                           <h5 className="uppercase mb0">Ale Figueroa</h5>
-                          <span>Social Rebel</span>
+                          <span>Full Stack Developer</span>
                         </div>
                         <p className="mb0">
                           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
@@ -162,82 +196,37 @@ export default class Beta extends Component {
 
                 </div>
 
-              </section><section className="bg-dark">
+              </section>
+              <footer className="footer-2 bg-primary">
                 <div className="container">
                   <div className="row">
-                    <div className="col-sm-12">
-                      <h6 className="uppercase">Section Title</h6>
-                      <hr className="mb160 mb-xs-24" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-md-10">
-                      <h1 className="thin">Focussed, Diverse, Disruptive.</h1>
-                    </div>
-                  </div>
-
-                  <div className="row mb160 mb-xs-0">
-                    <div className="col-md-6 col-sm-8">
-                      <p className="lead">
-                        Foundry maintains a portfolio spanning multiple sectors. Disruptive technology is our unifying theme.
+                    <div className="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center mb64 mb-xs-24">
+                      <a href="#">
+                        <img alt="Logo" className="image-small mb16 outline-image" src={logo} />
+                      </a>
+                      <p className="lead mb48 mb-xs-16">
+                        All the magic is done<br />
+                        somewhere in Colima, Mexico
                       </p>
+                      <SocialList items={socialItems} />
                     </div>
                   </div>
 
-                  <div className="row">
-                    <div className="col-md-3 col-sm-6 mb-xs-24">
-                      <i className="ti-pulse icon mb32" />
-                      <h6 className="uppercase">Health Monitoring</h6>
-                      <ul>
-                        <li>Medibank Private</li>
-                        <li>Fit Bit</li>
-                        <li>GoPro LTD.</li>
-                        <li>Adventours</li>
-                        <li>Airbnb</li>
-                        <li>Chemist Warehouse</li>
-                      </ul>
+                  <div className="row fade-half">
+                    <div className="col-sm-4 text-center-xs">
+                      <span>2017 Ale World</span>
                     </div>
-                    <div className="col-md-3 col-sm-6 mb-xs-24">
-                      <i className="ti-map-alt icon mb32" />
-                      <h6 className="uppercase">Location Services</h6>
-                      <ul>
-                        <li>Find My iPhone</li>
-                        <li>FourSquare</li>
-                        <li>Periscope</li>
-                        <li>Crackle</li>
-                        <li>Urban Spoon</li>
-                        <li>Yelp</li>
-                                    </ul>
-                                  </div>
-                                  <div className="col-md-3 col-sm-6 mb-xs-24">
-                                    <i className="ti-mobile icon mb32" />
-                                    <h6 className="uppercase">Social Data</h6>
-                                    <ul>
-                                      <li>Life Invader</li>
-                                      <li>Twitter</li>
-                                      <li>Google AdWords</li>
-                                      <li>Track My Day</li>
-                                      <li>SocialScape</li>
-                                      <li>Tinder</li>
-                                    </ul>
-                                  </div>
-                                  <div className="col-md-3 col-sm-6 mb-xs-24">
-                                    <i className="ti-harddrives icon mb32" />
-                                    <h6 className="uppercase">Cloud Enterprise</h6>
-                                    <ul>
-                                      <li>Box</li>
-                                      <li>Sunny Cloudy</li>
-                                      <li>Cumulii</li>
-                                      <li>Precipitatr</li>
-                                      <li>Nimb.us</li>
-                                    </ul>
-                                  </div>
-                                </div>
 
-                              </div>
+                    <div className="col-sm-4 text-center hidden-xs">
+                      <span>Life Style &amp; Software Development</span>
+                    </div>
 
-                            </section>
+                    <div className="col-sm-4 text-right hidden-xs">
+                      <span>me@ale.world</span>
+                          </div>
+                        </div>
+                      </div>
+                    </footer>
                           </div>
 
                         </div>
