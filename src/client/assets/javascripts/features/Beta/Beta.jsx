@@ -34,7 +34,7 @@ export default class Beta extends Component {
               <nav>
                 <div className="nav-bar">
                   <div className="module left">
-                    <a href="index.html">
+                    <a href="/">
                       <img className="logo logo-light" alt="Ale World" src={logo} />
                       <img className="logo logo-dark" alt="Ale World" src={logo} />
                       <h5> aleworld</h5>
@@ -47,7 +47,7 @@ export default class Beta extends Component {
                     <div className="module left">
                       <ul className="menu">
                         <li>
-                          <a href="#">Home</a>
+                          <a href="/">Home</a>
                         </li>
                         <li className="has-dropdown">
                           <a href="#">
