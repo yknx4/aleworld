@@ -1,11 +1,10 @@
-$side-padding: 3%;
+$side-padding: 5%;
 .nav-container {
   a h5 {
     display: inline-block;
   }
   .logo {
     padding-right: $side-padding;
-    padding-left: $side-padding;
   }
 }
 
