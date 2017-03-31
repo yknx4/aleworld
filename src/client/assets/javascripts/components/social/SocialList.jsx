@@ -4,7 +4,7 @@ import SocialLink from './SocialLink';
 export default class SocialList extends Component {
 
   drawLink(item) {
-    return <li><SocialLink {...item} /></li>;
+    return <li key={item.icon}><SocialLink {...item} /></li>;
   }
 
   render() {

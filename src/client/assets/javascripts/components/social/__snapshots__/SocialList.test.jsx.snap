@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialList should be selectable by tag "ul" 1`] = `
+<ul
+  className="list-inline social-list spread-children"
+>
+  <li>
+    <SocialLink
+      icon="github"
+      target="blank"
+      url="url1"
+    />
+  </li>
+  <li>
+    <SocialLink
+      icon="facebook"
+      target="blank"
+      url="url2"
+    />
+  </li>
+</ul>
+`;
+
+exports[`SocialList should render without throwing an error 1`] = `
+<ul
+  className="list-inline social-list spread-children"
+>
+  <li>
+    <SocialLink
+      icon="github"
+      target="blank"
+      url="url1"
+    />
+  </li>
+  <li>
+    <SocialLink
+      icon="facebook"
+      target="blank"
+      url="url2"
+    />
+  </li>
+</ul>
+`;
