@@ -188,7 +188,8 @@ export default class Beta extends Component {
                           <span>Full Stack Developer</span>
                         </div>
                         <p className="mb0">
-                          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+                          Web is the future. <br />
+                          
                         </p>
                       </div>
                     </div>
