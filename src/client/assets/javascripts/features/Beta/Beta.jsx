@@ -39,11 +39,10 @@ export default class Beta extends Component {
     render() {
         return (
           <div>
-            <Nav>
+            <Nav className="absolute">
               <Module className="left">
                 <a href="/">
                   <img className="logo logo-light" alt="Ale World" src={logo} />
-                  <img className="logo logo-dark" alt="Ale World" src={logo} />
                   <h5> aleworld</h5>
                 </a>
               </Module>

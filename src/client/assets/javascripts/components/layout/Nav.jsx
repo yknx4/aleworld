@@ -1,10 +1,10 @@
 import React, {PropTypes} from 'react';
 
-export default function Nav({children}) {
+export default function Nav({children, className}) {
   return (
     <div className="nav-container">
       <nav>
-        <div className="nav-bar">
+        <div className={`nav-bar ${className}`}>
           {children}
         </div>
       </nav>
@@ -13,5 +13,6 @@ export default function Nav({children}) {
 }
 
 Nav.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string
 };
