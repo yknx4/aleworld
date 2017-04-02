@@ -8,6 +8,8 @@ import MegaMenu from './MegaMenu';
 import Dropdown from './Dropdown';
 import MainContainer from './MainContainer';
 import PageTitle from './PageTitle';
+import MenuTitle from './MenuTitle';
+import ImageTile from './ImageTile';
 
 export {
   Nav,
@@ -20,6 +22,8 @@ export {
   Dropdown,
   MainContainer,
   PageTitle,
+  MenuTitle,
+  ImageTile,
 };
 
 export default LayoutElement;
