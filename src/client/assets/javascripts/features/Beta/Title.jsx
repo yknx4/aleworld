@@ -28,7 +28,7 @@ export default class Title extends Component {
               </Row>
             </Grid>
             <Breadcrumb className='breadcrumb-2'>
-              <Breadcrumb.Item activ>
+              <Breadcrumb.Item active>
                 <a href="#" className="active">Home</a>
               </Breadcrumb.Item>
             </Breadcrumb>
