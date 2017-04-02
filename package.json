@@ -158,6 +158,8 @@
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
     ],
+    "moduleDirectories": ["node_modules", "./src/client/scripts", "./src/client/assets", "./src/client/assets/javascripts"],
+    "moduleFileExtensions": ["js", "jsx"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     }
