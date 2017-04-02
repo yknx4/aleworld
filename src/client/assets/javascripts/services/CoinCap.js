@@ -2,7 +2,7 @@
 import {connect} from 'socket.io-client';
 import {isFunction, isEmpty, each, isUndefined, pull} from 'lodash';
 
-const {info, log} = console;
+const {info} = console;
 
 const EventTypes = {
   Global: Symbol('coincap-global'),

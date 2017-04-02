@@ -28,7 +28,9 @@ module.exports = {
   ],
 
   "globals": {
-    "define": true
+    "define": true,
+    "Raven": true,
+    "$": true,
   },
 
   "settings": {
