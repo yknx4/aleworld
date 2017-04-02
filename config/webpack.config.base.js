@@ -34,6 +34,10 @@ module.exports = {
   ],
   module: {
     rules: [
+      {
+        test: /\.md$/,
+        use: 'raw-loader'
+      },
       // JavaScript / ES6
       {
         test: /\.jsx?$/,
