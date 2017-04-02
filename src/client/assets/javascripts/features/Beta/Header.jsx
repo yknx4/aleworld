@@ -32,10 +32,10 @@ export default class Header extends Component {
                     <a href="/">Home</a>
                   </li>
                   <Dropdown>
-                    <a href="#">
+                    <a href="//yknx4.github.io/blog">
                       Blog
                     </a>
-                    <MegaMenu>
+                    {/* <MegaMenu>
                       <li>
                         <ul>
                           <li>
@@ -56,9 +56,9 @@ export default class Header extends Component {
                           </li>
                         </ul>
                       </li>
-                    </MegaMenu>
+                    </MegaMenu> */}
                   </Dropdown>
-                  <Dropdown>
+                  {/* <Dropdown>
                     <a href="#">
                       Projects
                     </a>
@@ -76,7 +76,7 @@ export default class Header extends Component {
                         </ul>
                       </Dropdown>
                     </ul>
-                  </Dropdown>
+                  </Dropdown> */}
                 </Menu>
               </Module>
             </ModuleGroup>
