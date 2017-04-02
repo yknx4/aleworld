@@ -13,7 +13,15 @@ import {
   Menu,
   MegaMenu,
   Dropdown,
+  MainContainer,
+  PageTitle,
 } from 'components/layout';
+
+import {
+  Grid,
+  Row,
+  Col,
+} from 'react-bootstrap';
 
 const socialItems = [
   {
@@ -104,24 +112,20 @@ export default class Beta extends Component {
                   </Menu>
                 </Module>
               </ModuleGroup>
-
             </Nav>
-
-            <div className="main-container">
-              <section className="page-title page-title-1 bg-secondary">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-sm-12 text-center bl">
+            <MainContainer>
+              <PageTitle className="page-title-1 bg-secondary">
+                <Grid>
+                  <Row>
+                    <Col sm={12} className="text-center bl">
                       <span className="mb0 h1">ale</span>
                       <span className="mb0 h1 right-color">world</span>
-                    </div>
-                    <div className="col-sm-12 text-center bl">
+                    </Col>
+                    <Col sm={12} className="text-center bl">
                       <span className="mb0 h4">LifeThoughts, SocialCriticism, and some SoftwareDevelopment</span>
-                    </div>
-                  </div>
-
-                </div>
-
+                    </Col>
+                  </Row>
+                </Grid>
                 <ol className="breadcrumb breadcrumb-2">
                   <li>
                     <a href="#" className="active">Home</a>
@@ -131,10 +135,11 @@ export default class Beta extends Component {
                     </li>
                   <li className="active">Page Titles</li> */}
                 </ol>
-              </section><section>
-                <div className="container">
-                  <div className="row">
-                    <div className="col-md-4 col-sm-6">
+              </PageTitle>
+              <section>
+                <Grid>
+                  <Row>
+                    <Col md={4} sm={6}>
                       <div className="image-tile outer-title text-justify">
                         <img alt="Ale Figueroa" src={ale2} className="img-circle sm-img"/>
                         <div className="title mb16">
@@ -145,8 +150,8 @@ export default class Beta extends Component {
                           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
                         </p>
                       </div>
-                    </div>
-                    <div className="col-md-4 col-sm-6">
+                    </Col>
+                    <Col md={4} sm={6}>
                       <div className="image-tile outer-title text-justify">
                         <img alt="Ale Figueroa" src={ale3} className="img-circle sm-img"/>
                         <div className="title mb16">
@@ -163,8 +168,8 @@ export default class Beta extends Component {
                           And I’m against Gender Roles (a byproduct of sexism), I don’t think a person can be defined by what society tells them they are supposed to be just because the person was born with or without something between the legs. I consider myself transgender, but feel free to address me however you feel you should.
                         </p>
                       </div>
-                    </div>
-                    <div className="col-md-4 col-sm-6">
+                    </Col>
+                    <Col md={4} sm={6}>
                       <div className="image-tile outer-title text-justify">
                         <img alt="Ale Figueroa" src={ale} className="img-circle sm-img"/>
                         <div className="title mb16">
@@ -176,16 +181,14 @@ export default class Beta extends Component {
 
                         </p>
                       </div>
-                    </div>
-                  </div>
-
-                </div>
-
+                    </Col>
+                  </Row>
+                </Grid>
               </section>
               <footer className="footer-2 bg-primary">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center mb64 mb-xs-24">
+                <Grid>
+                  <Row>
+                    <Col md={6} mdOffset={3} sm={8} smOffset={2} className="text-center mb64 mb-xs-24">
                       <a href="#">
                         <img alt="Logo" className="image-small mb16 outline-image" src={logo} />
                       </a>
@@ -194,28 +197,26 @@ export default class Beta extends Component {
                         somewhere in Colima, Mexico
                       </p>
                       <SocialList items={socialItems} />
-                    </div>
-                  </div>
+                    </Col>
+                  </Row>
 
-                  <div className="row fade-half">
-                    <div className="col-sm-4 text-center-xs">
+                  <Row className="fade-1-4">
+                    <Col sm={4} className="text-center-xs">
                       <span>2017 Ale World</span>
-                    </div>
+                    </Col>
 
-                    <div className="col-sm-4 text-center hidden-xs">
+                    <Col sm={4} xsHidden className="text-center">
                       <span>Life Style &amp; Software Development</span>
-                    </div>
+                    </Col>
 
-                    <div className="col-sm-4 text-right hidden-xs">
+                    <Col sm={4} xsHidden className="text-right">
                       <span>me@ale.world</span>
-                          </div>
-                        </div>
-                      </div>
-                    </footer>
-                          </div>
-
-                        </div>
-
+                    </Col>
+                  </Row>
+                </Grid>
+              </footer>
+            </MainContainer>
+          </div>
         );
     }
 }

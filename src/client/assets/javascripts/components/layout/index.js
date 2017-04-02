@@ -6,6 +6,8 @@ import ThemifyIcon from './ThemifyIcon';
 import Menu from './Menu';
 import MegaMenu from './MegaMenu';
 import Dropdown from './Dropdown';
+import MainContainer from './MainContainer';
+import PageTitle from './PageTitle';
 
 export {
   Nav,
@@ -15,7 +17,9 @@ export {
   ThemifyIcon,
   Menu,
   MegaMenu,
-  Dropdown
+  Dropdown,
+  MainContainer,
+  PageTitle,
 };
 
 export default LayoutElement;
