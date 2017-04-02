@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutElement should be selectable by tag 1`] = `
+<div
+  className="element right"
+>
+   
+  <p />
+   
+</div>
+`;
+
+exports[`LayoutElement should mount in a full DOM 1`] = `
+<Module
+  baseClass="element"
+  className="right"
+  tag="div"
+>
+  <div
+    className="element right"
+  >
+     
+    <p />
+     
+  </div>
+</Module>
+`;
+
+exports[`LayoutElement should render without throwing an error 1`] = `
+<div
+  className="element right"
+>
+   
+  <p />
+   
+</div>
+`;

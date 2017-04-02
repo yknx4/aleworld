@@ -5,6 +5,15 @@ import ale2 from 'images/ale2.jpg';
 import ale3 from 'images/ale3.jpg';
 import 'styles/components/Beta.scss';
 import SocialList from 'components/social/SocialList';
+import {
+  Nav,
+  Module,
+  ModuleGroup,
+  ThemifyIcon,
+  Menu,
+  MegaMenu,
+  Dropdown,
+} from 'components/layout';
 
 const socialItems = [
   {
@@ -30,98 +39,74 @@ export default class Beta extends Component {
     render() {
         return (
           <div>
-            <div className="nav-container">
-              <nav>
-                <div className="nav-bar">
-                  <div className="module left">
-                    <a href="/">
-                      <img className="logo logo-light" alt="Ale World" src={logo} />
-                      <img className="logo logo-dark" alt="Ale World" src={logo} />
-                      <h5> aleworld</h5>
-                    </a>
-                  </div>
-                  <div className="module widget-handle mobile-toggle right visible-sm visible-xs">
-                    <i className="ti-menu" />
-                  </div>
-                  <div className="module-group right">
-                    <div className="module left">
-                      <ul className="menu">
+            <Nav>
+              <Module className="left">
+                <a href="/">
+                  <img className="logo logo-light" alt="Ale World" src={logo} />
+                  <img className="logo logo-dark" alt="Ale World" src={logo} />
+                  <h5> aleworld</h5>
+                </a>
+              </Module>
+              <Module className="widget-handle mobile-toggle right visible-sm visible-xs">
+                <ThemifyIcon icon="menu" />
+              </Module>
+              <ModuleGroup className="right">
+                <Module className="left">
+                  <Menu>
+                    <li>
+                      <a href="/">Home</a>
+                    </li>
+                    <Dropdown>
+                      <a href="#">
+                        Blog
+                      </a>
+                      <MegaMenu>
                         <li>
-                          <a href="/">Home</a>
-                        </li>
-                        <li className="has-dropdown">
-                          <a href="#">
-                            Blog
-                          </a>
-                          <ul className="mega-menu">
+                          <ul>
                             <li>
-                              <ul>
-                                <li>
-                                  <span className="title">Column 1</span>
-                                </li>
-                                <li>
-                                  <a href="#">Single</a>
-                                </li>
-                              </ul>
+                              <span className="title">Column 1</span>
                             </li>
                             <li>
-                              <ul>
-                                <li>
-                                  <span className="title">Column 2</span>
-                                </li>
-                                <li>
-                                  <a href="#">Single</a>
-                                </li>
-                              </ul>
+                              <a href="#">Single</a>
                             </li>
                           </ul>
                         </li>
-                        <li className="has-dropdown">
+                        <li>
+                          <ul>
+                            <li>
+                              <span className="title">Column 2</span>
+                            </li>
+                            <li>
+                              <a href="#">Single</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </MegaMenu>
+                    </Dropdown>
+                    <Dropdown>
+                      <a href="#">
+                        Projects
+                      </a>
+                      <ul>
+                        <Dropdown>
                           <a href="#">
-                            Projects
+                            Second Level
                           </a>
                           <ul>
-                            <li className="has-dropdown">
+                            <li>
                               <a href="#">
-                                Second Level
+                                Single
                               </a>
-                              <ul>
-                                <li>
-                                  <a href="#">
-                                    Single
-                                  </a>
-                                </li>
-                              </ul>
                             </li>
                           </ul>
-                        </li>
+                        </Dropdown>
                       </ul>
-                    </div>
+                    </Dropdown>
+                  </Menu>
+                </Module>
+              </ModuleGroup>
 
-                    {/* <div className="module widget-handle language left">
-                      <ul className="menu">
-                        <li className="has-dropdown">
-                          <a href="#">English</a>
-                          <ul>
-                            <li>
-                              <a href="#">Spanish</a>
-                            </li>
-                            <li>
-                              <a href="#" className='disabled'>Korean</a>
-                            </li>
-                            <li>
-                              <a href="#" className='disabled'>Japanese</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div> */}
-                  </div>
-
-                </div>
-              </nav>
-
-            </div>
+            </Nav>
 
             <div className="main-container">
               <section className="page-title page-title-1 bg-secondary">
@@ -189,7 +174,7 @@ export default class Beta extends Component {
                         </div>
                         <p className="mb0">
                           Web is the future. <br />
-                          
+
                         </p>
                       </div>
                     </div>

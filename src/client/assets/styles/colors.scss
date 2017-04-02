@@ -1,8 +1,8 @@
-$primary-color-dark:   #FF3333;
+$primary-color-dark:   lighten(#FF3333, 10);
 $primary-color:        #FF6666;
 $primary-color-light:  #FFCCCC;
 $primary-color-text:   #FFFFFF;
-$accent-color:         #FF5252;
+$accent-color:         lighten(#FF5252, 10);
 $primary-text-color:   #212121;
 $secondary-text-color: #757575;
 $divider-color:        #BDBDBD;

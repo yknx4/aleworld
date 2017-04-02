@@ -40,3 +40,8 @@ $side-padding: 5%;
     color: $primary-color-light;
   }
 }
+
+.bg-pastel {
+  @extend .bg-primary;
+  background: lighten($accent-color, 10) !important;
+}
