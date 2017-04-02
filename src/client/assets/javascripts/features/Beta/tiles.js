@@ -14,7 +14,7 @@ export default [
       src: ale2,
     },
     title: 'Ale Figueroa',
-    subtitle: 'Android Developer',
+    subtitle: 'Software Developer',
     description: androidDevText
   },
   {
@@ -34,7 +34,7 @@ export default [
       src: ale,
     },
     title: 'Ale Figueroa',
-    subtitle: 'Fullstack Developer',
+    subtitle: 'LifeHacker & LanguageLover',
     description: fullstackText
   },
 ];
