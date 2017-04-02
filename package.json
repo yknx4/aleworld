@@ -34,8 +34,7 @@
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.production.js --progress",
     "postbuild": "npm run build:html",
     "build:serve": "http-server build/client -p 3003 --cors -o",
-    "lint": "eslint config src/js/** --ext .js",
-    "jscs": "jscs src/js/",
+    "lint": "eslint config src/client/assets/javascripts** --ext .js .jsx",
     "typecheck": "flow",
     "test": "node scripts/test.js --env=jsdom",
     "tunnel": "lt --port 3000",
@@ -76,7 +75,8 @@
     "http-server": "0.9.0",
     "imports-loader": "^0.7.1",
     "jest": "^19.0.2",
-    "jquery": "3.1.0",
+    "jest-enzyme": "^3.0.0",
+    "jquery": "^3.2.1",
     "jscs": "3.0.7",
     "jsdom": "9.4.5",
     "less": "^2.7.2",
@@ -112,13 +112,14 @@
     "enzyme": "^2.7.1",
     "express": "4.14.0",
     "global": "^4.3.1",
+    "image-webpack-loader": "^3.3.0",
     "lodash": "4.15.0",
     "numeral": "^2.0.4",
     "raven": "^1.2.0",
     "raven-js": "3.6.1",
     "react": "15.3.1",
     "react-bootstrap": "^0.30.8",
-    "react-dom": "15.3.1",
+    "react-dom": "^15.4.2",
     "react-fontawesome": "^1.5.0",
     "react-ga": "^2.1.2",
     "react-helmet": "^4.0.0",
@@ -136,6 +137,7 @@
     "svgexport": "^0.3.2"
   },
   "jest": {
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
@@ -154,6 +156,16 @@
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "./src/client/scripts",
+      "./src/client/assets",
+      "./src/client/assets/javascripts"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"

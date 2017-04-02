@@ -1,0 +1,47 @@
+$side-padding: 8%;
+.nav-container {
+  a h5 {
+    display: inline;
+  }
+  .logo {
+    padding-right: $side-padding;
+  }
+}
+
+.right-color {
+  color: $primary-color-dark !important;
+}
+
+.sm-img {
+  width: 75%
+}
+
+.outline-image {
+  -webkit-filter: drop-shadow(1px 1px 0 black)
+                 drop-shadow(-1px -1px 0 black);
+ filter: drop-shadow(1px 1px 0 black)
+         drop-shadow(-1px -1px 0 black);
+}
+
+.mb0 {
+  br {
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 1em; /* change this to whatever height you want it */
+  }
+}
+
+.icon {
+    color: $primary-color-light;
+}
+
+.bg-light {
+  p {
+    color: $primary-color-light;
+  }
+}
+
+.bg-pastel {
+  @extend .bg-primary;
+  background: lighten($accent-color, 10) !important;
+}

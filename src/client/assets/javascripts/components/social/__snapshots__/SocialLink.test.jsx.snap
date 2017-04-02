@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialLink should be selectable by tag "a" 1`] = `
+<a
+  href="#"
+  target="blank"
+>
+  <i
+    className="icon icon-sm ti-icon"
+  />
+</a>
+`;
+
+exports[`SocialLink should mount in a full DOM 1`] = `
+<SocialLink
+  icon="icon"
+  target="blank"
+  url="#"
+>
+  <a
+    href="#"
+    target="blank"
+  >
+    <i
+      className="icon icon-sm ti-icon"
+    />
+  </a>
+</SocialLink>
+`;
+
+exports[`SocialLink should render without throwing an error 1`] = `
+<a
+  href="#"
+  target="blank"
+>
+  <i
+    className="icon icon-sm ti-icon"
+  />
+</a>
+`;

@@ -50,24 +50,32 @@ module.exports = {
       // Inline base64 URLs for <=8k images, direct URLs for the rest
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
-        use: {
+        use: [{
           loader: 'url-loader',
           options: {
             limit: 8192,
             name: 'images/[name].[ext]?[hash]'
           },
         },
+        {
+          loader: 'image-webpack-loader',
+          query: {
+            progressive: true,
+          }
+        }
+      ],
       },
       // Fonts
       {
         test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-        use: {
-            loader: 'file-loader',
-            options: {
-              name: 'fonts/[name].[ext]?[hash]'
-            }
-          },
-      }
-    ]
-  }
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[name].[ext]?[hash]'
+          }
+        },
+      ],
+    }
+  ]
+}
 };

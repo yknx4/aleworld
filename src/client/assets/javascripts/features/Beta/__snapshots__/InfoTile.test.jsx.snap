@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoTile should be selectable by tag 1`] = `
+<ImageTile
+  className="outer-title text-justify"
+>
+  <img
+    alt="alt"
+    className="img-circle sm-img"
+    src="//path"
+  />
+  <div
+    className="title mb16"
+  >
+    <h5
+      className="uppercase mb0"
+    >
+      title
+    </h5>
+    <span>
+      subtitle
+    </span>
+  </div>
+  <p
+    className="mb0"
+  >
+    description
+  </p>
+</ImageTile>
+`;
+
+exports[`InfoTile should mount in a full DOM 1`] = `
+<InfoTile
+  description="description"
+  picture={
+    Object {
+      "alt": "alt",
+      "src": "//path",
+    }
+  }
+  subtitle="subtitle"
+  title="title"
+>
+  <ImageTile
+    className="outer-title text-justify"
+  >
+    <Module
+      baseClass="image-tile"
+      className="outer-title text-justify"
+      tag="div"
+    >
+      <div
+        className="image-tile outer-title text-justify"
+      >
+        <img
+          alt="alt"
+          className="img-circle sm-img"
+          src="//path"
+        />
+        <div
+          className="title mb16"
+        >
+          <h5
+            className="uppercase mb0"
+          >
+            title
+          </h5>
+          <span>
+            subtitle
+          </span>
+        </div>
+        <p
+          className="mb0"
+        >
+          description
+        </p>
+      </div>
+    </Module>
+  </ImageTile>
+</InfoTile>
+`;
+
+exports[`InfoTile should render without throwing an error 1`] = `
+<ImageTile
+  className="outer-title text-justify"
+>
+  <img
+    alt="alt"
+    className="img-circle sm-img"
+    src="//path"
+  />
+  <div
+    className="title mb16"
+  >
+    <h5
+      className="uppercase mb0"
+    >
+      title
+    </h5>
+    <span>
+      subtitle
+    </span>
+  </div>
+  <p
+    className="mb0"
+  >
+    description
+  </p>
+</ImageTile>
+`;
