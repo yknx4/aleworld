@@ -17,7 +17,6 @@ install:
 script:
   - yarn test
   - yarn lint
-  - yarn jscs
   - yarn prebuild
   - yarn build
   - yarn build:html
