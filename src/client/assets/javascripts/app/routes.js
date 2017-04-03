@@ -5,7 +5,6 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import App from './App';
 import ComingSoon from 'features/ComingSoon';
 import NotFoundView from 'components/NotFound';
 import Beta from 'features/Beta';
