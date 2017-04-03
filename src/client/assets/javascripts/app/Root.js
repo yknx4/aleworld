@@ -2,7 +2,8 @@
 
 import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import Helmet from 'react-helmet';
 import ReactGA from 'react-ga';
 
@@ -35,7 +36,9 @@ const Root = ({ store, history }) => {
     <Provider store={store}>
       <div>
         <Helmet {...HelmetSettings} />
-        <Router onUpdate={logPageView} history={history} routes={routes} />
+        <Router onUpdate={logPageView} history={history}>
+          {routes}
+        </Router>
       </div>
     </Provider>
   );
@@ -47,7 +50,9 @@ const Root = ({ store, history }) => {
       <Provider store={store}>
         <div>
           <Helmet {...HelmetSettings} />
-          <Router history={history} routes={routes} />
+          <Router history={history}>
+            {routes}
+          </Router>
           {!window.devToolsExtension ? <DevTools /> : null}
         </div>
       </Provider>

@@ -2,6 +2,9 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { persistState } from 'redux-devtools';
 import promiseMiddleware from 'redux-promise';
 import createLogger from 'redux-logger';
+import { routerMiddleware } from 'react-router-redux';
+import { syncHistoryWithStore} from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
 
 import rootReducer from '../reducer';
 import DevTools from '../DevTools';
@@ -14,7 +17,13 @@ import DevTools from '../DevTools';
  */
 const logger = createLogger();
 
-const middlewares = [promiseMiddleware, logger, require('redux-immutable-state-invariant')()];
+// Create a history of your choosing (we're using a browser history in this case)
+const history = createHistory();
+
+// Build the middleware for intercepting and dispatching navigation actions
+const routerMiddle = routerMiddleware(history);
+
+const middlewares = [promiseMiddleware, logger, require('redux-immutable-state-invariant')(), routerMiddle];
 
 // By default we try to read the key from ?debug_session=<key> in the address bar
 const getDebugSessionKey = function () {
@@ -31,6 +40,8 @@ const enhancer = compose(
 
 export default function configureStore(initialState) {
   const store = createStore(rootReducer, initialState, enhancer);
+
+  syncHistoryWithStore(history, store);
 
   // Enable hot module replacement for reducers (requires Webpack or Browserify HMR to be enabled)
   if (module.hot) {

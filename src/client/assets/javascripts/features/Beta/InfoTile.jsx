@@ -1,5 +1,6 @@
 import React,{Component, PropTypes} from 'react';
 import {ImageTile} from 'components/layout';
+import ReactMarkdown from 'react-markdown';
 
 export default class InfoTile extends Component {
 
@@ -13,9 +14,10 @@ export default class InfoTile extends Component {
               <h5 className="uppercase mb0">{title}</h5>
               <span>{subtitle}</span>
             </div>
-            <p className="mb0">
-              {description}
-            </p>
+            <ReactMarkdown
+              source={description}
+              className="mb0"
+              softBreak="br"/>
           </ImageTile>
         );
     }

@@ -21,11 +21,13 @@ exports[`InfoTile should be selectable by tag 1`] = `
       subtitle
     </span>
   </div>
-  <p
+  <ReactMarkdown
     className="mb0"
-  >
-    description
-  </p>
+    containerTagName="div"
+    parserOptions={Object {}}
+    softBreak="br"
+    source="description"
+  />
 </ImageTile>
 `;
 
@@ -69,11 +71,21 @@ exports[`InfoTile should mount in a full DOM 1`] = `
             subtitle
           </span>
         </div>
-        <p
+        <ReactMarkdown
           className="mb0"
+          containerTagName="div"
+          parserOptions={Object {}}
+          softBreak="br"
+          source="description"
         >
-          description
-        </p>
+          <div
+            className="mb0"
+          >
+            <p>
+              description
+            </p>
+          </div>
+        </ReactMarkdown>
       </div>
     </Module>
   </ImageTile>
@@ -101,10 +113,12 @@ exports[`InfoTile should render without throwing an error 1`] = `
       subtitle
     </span>
   </div>
-  <p
+  <ReactMarkdown
     className="mb0"
-  >
-    description
-  </p>
+    containerTagName="div"
+    parserOptions={Object {}}
+    softBreak="br"
+    source="description"
+  />
 </ImageTile>
 `;

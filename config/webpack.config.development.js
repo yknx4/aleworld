@@ -12,7 +12,7 @@ const GLOBALS = {
 
 module.exports = merge(config, {
   cache: true,
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'source-map',
   entry: {
     application: [
       'bootstrap-loader',
