@@ -4,6 +4,7 @@ import {
   Row,
   Col,
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import SocialList from 'components/social/SocialList';
 import logo from 'images/aleworld-logo.png';
 
@@ -34,9 +35,9 @@ export default class Footer extends Component {
             <Grid>
               <Row>
                 <Col md={6} mdOffset={3} sm={8} smOffset={2} className="text-center mb64 mb-xs-24">
-                  <a href="#">
+                  <Link to="/">
                     <img alt="Logo" className="image-small mb16 outline-image" src={logo} />
-                  </a>
+                  </Link>
                   <p className="lead mb48 mb-xs-16">
                     All the magic is done<br />
                     somewhere in Colima, Mexico

@@ -4,6 +4,8 @@ import {
   PageTitle,
 } from 'components/layout';
 
+import { NavLink } from 'react-router-dom';
+
 import {
   Grid,
   Row,
@@ -28,9 +30,9 @@ export default class Title extends Component {
               </Row>
             </Grid>
             <Breadcrumb className='breadcrumb-2'>
-              <Breadcrumb.Item active>
-                <a href="#" className="active">Home</a>
-              </Breadcrumb.Item>
+              <li>
+                <NavLink to="/beta" activeClassName="active">Home</NavLink>
+              </li>
             </Breadcrumb>
           </PageTitle>
         );

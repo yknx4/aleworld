@@ -5,10 +5,9 @@ import {
   ModuleGroup,
   ThemifyIcon,
   Menu,
-  MegaMenu,
   Dropdown,
-  MenuTitle,
 } from 'components/layout';
+import { Link } from 'react-router-dom';
 import logo from 'images/aleworld-logo.png';
 
 export default class Header extends Component {
@@ -17,10 +16,10 @@ export default class Header extends Component {
         return (
           <Nav className="absolute">
             <Module className="left">
-              <a href="/">
+              <Link to="/beta">
                 <img className="logo logo-light" alt="Ale World" src={logo} />
                 <h5> aleworld</h5>
-              </a>
+              </Link>
             </Module>
             <Module className="widget-handle mobile-toggle right visible-sm visible-xs">
               <ThemifyIcon icon="menu" />
@@ -29,7 +28,7 @@ export default class Header extends Component {
               <Module className="left">
                 <Menu>
                   <li>
-                    <a href="/">Home</a>
+                    <Link to="/beta">Home</Link>
                   </li>
                   <Dropdown>
                     <a href="//yknx4.github.io/blog">
