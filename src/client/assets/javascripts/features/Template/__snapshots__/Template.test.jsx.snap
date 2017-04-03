@@ -1,12 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Template should be selectable by tag 1`] = `
+<div>
+  <Header />
+  <MainContainer>
+    <p>
+       papi 
+    </p>
+    <Footer />
+  </MainContainer>
+</div>
+`;
+
+exports[`Template should render its children 1`] = `
+<div>
+  <Header />
+  <MainContainer>
+    <p>
+       papi 
+    </p>
+    <Footer />
+  </MainContainer>
+</div>
+`;
+
 exports[`Template should render without throwing an error 1`] = `
 <div>
   <Header />
   <MainContainer>
-     
-    <p />
-     
+    <p>
+       papi 
+    </p>
     <Footer />
   </MainContainer>
 </div>
