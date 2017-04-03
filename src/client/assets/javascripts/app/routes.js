@@ -11,8 +11,8 @@ import Beta from 'features/Beta';
 
 export default (
   <Switch>
-    <Route exact path="/" component={ComingSoon} />
-    <Route path='/beta' component={Beta} />
+    <Route exact path="/" component={Beta} />
+    <Route path='/legacy' component={ComingSoon} />
     <Route path="/404" component={NotFoundView} />
     <Redirect from="*" to="/404" />
   </Switch>
