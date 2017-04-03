@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Template should render without throwing an error 1`] = `
+<div>
+  <Header />
+  <MainContainer>
+     
+    <p />
+     
+    <Footer />
+  </MainContainer>
+</div>
+`;

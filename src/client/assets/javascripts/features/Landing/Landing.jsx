@@ -1,9 +1,4 @@
 import React,{Component} from 'react';
-import 'styles/components/Beta.scss';
-
-import {
-  MainContainer,
-} from 'components/layout';
 
 import {
   Grid,
@@ -11,18 +6,14 @@ import {
   Col,
 } from 'react-bootstrap';
 
-import Header from './Header';
-import Title from './Title';
-import Footer from './Footer';
 import InfoTile from './InfoTile';
 import tiles from './tiles';
+import Template, {Title} from 'features/Template';
 
-export default class Beta extends Component {
+export default class Landing extends Component {
     render() {
         return (
-          <div>
-            <Header />
-            <MainContainer>
+            <Template>
               <Title />
               <section>
                 <Grid>
@@ -31,9 +22,7 @@ export default class Beta extends Component {
                   </Row>
                 </Grid>
               </section>
-              <Footer />
-            </MainContainer>
-          </div>
+            </Template>
         );
     }
 }
