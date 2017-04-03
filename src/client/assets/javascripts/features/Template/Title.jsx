@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React,{Component, PropTypes} from 'react';
 
 import {
   PageTitle,
@@ -14,27 +14,37 @@ import {
 } from 'react-bootstrap';
 
 export default class Title extends Component {
-
-    render() {
-        return (
-          <PageTitle className="page-title-1 bg-secondary">
-            <Grid>
-              <Row>
-                <Col sm={12} className="text-center bl">
-                  <span className="mb0 h1">ale</span>
-                  <span className="mb0 h1 right-color">world</span>
-                </Col>
-                <Col sm={12} className="text-center bl">
-                  <span className="mb0 h4">LifeThoughts, SocialCriticism, and some SoftwareDevelopment</span>
-                </Col>
-              </Row>
-            </Grid>
-            <Breadcrumb className='breadcrumb-2'>
-              <li>
-                <NavLink to="/beta" activeClassName="active">Home</NavLink>
-              </li>
-            </Breadcrumb>
-          </PageTitle>
-        );
-    }
+  render() {
+    const {section, showSubtitle} = this.props;
+    return (
+      <PageTitle className="page-title-1 bg-secondary">
+        <Grid>
+          <Row>
+            <Col sm={12} className="text-center bl">
+              <span className="mb0 h1">ale</span>
+              <span className="mb0 h1 right-color">{section}</span>
+            </Col>
+            {showSubtitle && <Col sm={12} className="text-center bl">
+              <span className="mb0 h4">LifeThoughts, SocialCriticism, and some SoftwareDevelopment</span>
+            </Col>}
+          </Row>
+        </Grid>
+        <Breadcrumb className='breadcrumb-2'>
+          <li>
+            <NavLink to="/beta" activeClassName="active">Home</NavLink>
+          </li>
+        </Breadcrumb>
+      </PageTitle>
+    );
+  }
 }
+
+Title.propTypes = {
+  section: PropTypes.string,
+  showSubtitle: PropTypes.bool,
+};
+
+Title.defaultProps = {
+  section: 'world',
+  showSubtitle: true
+};

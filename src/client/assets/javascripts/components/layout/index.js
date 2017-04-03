@@ -10,6 +10,10 @@ import MainContainer from './MainContainer';
 import PageTitle from './PageTitle';
 import MenuTitle from './MenuTitle';
 import ImageTile from './ImageTile';
+import LeadText from './LeadText';
+import HorizontalTile from './HorizontalTile';
+import TileLeft from './TileLeft';
+import TileRight from './TileRight';
 
 export {
   Nav,
@@ -24,6 +28,10 @@ export {
   PageTitle,
   MenuTitle,
   ImageTile,
+  LeadText,
+  HorizontalTile,
+  TileLeft,
+  TileRight,
 };
 
 export default LayoutElement;
