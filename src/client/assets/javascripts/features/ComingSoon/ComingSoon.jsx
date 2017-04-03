@@ -3,7 +3,6 @@ import 'styles/components/ComingSoon.scss';
 import AwesomeLink from 'components/AwesomeLink';
 import { Row, Col } from 'react-bootstrap';
 import CryptoIndicator from 'components/CryptoIndicator';
-import logo from 'images/aleworld-logo.png';
 
 export default class ComingSoon extends React.Component {
   render() {

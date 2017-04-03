@@ -1,25 +1,14 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Template from './Template';
 
 describe('Template', () => {
   let shallowComponent;
-  let mountedComponent;
-
-  const props = {
-    description: 'description',
-    title: 'title',
-    subtitle: 'subtitle',
-    picture: {
-      src: '//path',
-      alt: 'alt'
-    }
-  };
+  const children = <p> papi </p>;
 
   beforeEach(() => {
-    const component = <Template {...props} > <p /> </Template>;
+    const component = <Template >{children}</Template>;
     shallowComponent = shallow(component);
-    mountedComponent = mount(component);
   });
 
   it('should render without throwing an error', function() {
@@ -27,13 +16,13 @@ describe('Template', () => {
   });
 
   it('should be selectable by tag', function() {
-    expect(shallowComponent.is('ImageTile')).toBe(true);
+    expect(shallowComponent.is('div')).toBe(true);
     expect(shallowComponent).toMatchSnapshot();
   });
 
-  it('should mount in a full DOM', function() {
-    expect(mountedComponent.find('ImageTile').length).toBe(1);
-    expect(mountedComponent).toMatchSnapshot();
+  it('should render its children', () => {
+    expect(shallowComponent.contains(children)).toBe(true);
+    expect(shallowComponent).toMatchSnapshot();
   });
 
 });
