@@ -11,7 +11,7 @@ exports[`LayoutElement should be selectable by tag 1`] = `
 `;
 
 exports[`LayoutElement should mount in a full DOM 1`] = `
-<Module
+<LayoutElement
   baseClass="element"
   className="right"
   tag="div"
@@ -23,7 +23,7 @@ exports[`LayoutElement should mount in a full DOM 1`] = `
     <p />
      
   </div>
-</Module>
+</LayoutElement>
 `;
 
 exports[`LayoutElement should render without throwing an error 1`] = `

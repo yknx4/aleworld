@@ -46,7 +46,7 @@ exports[`InfoTile should mount in a full DOM 1`] = `
   <ImageTile
     className="outer-title text-justify"
   >
-    <Module
+    <LayoutElement
       baseClass="image-tile"
       className="outer-title text-justify"
       tag="div"
@@ -87,7 +87,7 @@ exports[`InfoTile should mount in a full DOM 1`] = `
           </div>
         </ReactMarkdown>
       </div>
-    </Module>
+    </LayoutElement>
   </ImageTile>
 </InfoTile>
 `;
